@@ -6,7 +6,7 @@
                 <tr>
                 <th bgcolor='#EBEBEB'>
 <form id="form" name="form1" method="post" action="">
-<select name="nian" id="nian" onchange="window.location.href='niantongji.php?nian='+this.value">
+<select name="nian" id="nian" onchange="window.location.href='niantongji.php?nian='+this.value;options[selectedIndex].value;onchange=save()">
 
 <?php $sqlzhanghu = "SELECT * FROM jizhang_account where jiid='$_SESSION[uid]' order by actime limit 1"; //order by actime limit 1
         $result2 = mysql_query($sqlzhanghu);
@@ -824,7 +824,22 @@ echo "<tr><td align='left' bgcolor='#FFFFFF'><font color='MediumSeaGreen'>".$ns.
 
 
 </div>
-
+<script language="javascript" type="text/javascript">      function save() {  
+        selectIndex = document.getElementById("nian").selectedIndex;  
+        document.cookie = 'selectIndex =' + selectIndex;  
+    }  
+    window.onload = function () {  
+        var cooki = document.cookie;  
+        if (cooki != "") {  
+            cooki = "{\"" + cooki + "\"}";  
+            cooki = cooki.replace(/\s*/g, "").replace(/=/g, '":"').replace(/;/g, '","');  
+            var json = eval("(" + cooki + ")"); //将coolies转成json对象  
+            document.getElementById("nian").options[json.selectIndex].selected = true;  
+        }  
+        else  
+            save();  
+    }  
+</script>
 <?php
     include_once("xiamian.php");
 ?>
