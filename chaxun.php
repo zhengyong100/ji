@@ -291,7 +291,7 @@ var daochu = (function() {
 			echo "
 				<table align='left' width='100%' height='20' border='0' align='left' cellpadding='5' cellspacing='1' bgcolor='#B3B3B3' class='table table-striped table-bordered'>
   <tr>
-  <td align='left' bgcolor='#EBEBEB'>　查询结果&nbsp;<font id='tongji'></font>　　<input type='button' onclick='daochu('excel')' value='导出搜索结果为xls excel文件' class='btn btn-default'></td>
+  <td align='left' bgcolor='#EBEBEB'>　查询结果&nbsp;<font id='tongji'></font>　　<input type='button' onclick='daochu(excel)' value='导出搜索结果为xls excel文件' class='btn btn-default'></td>
   </tr>
 </table>
 
