@@ -21,7 +21,7 @@ $result = mysql_query($sql);
 $sqls="delete from jizhang_account_class where ufid='$_SESSION[uid]'";
             $results = mysql_query($sqls);
             if ($results)
-            echo("<script type='text/javascript'>alert('数据已全部删除成功！');window.location='zhanghao.php';</script>");
+            echo("<script type='text/javascript'>;window.location='zhanghao.php';</script>"); //数据已全部删除成功！
             else
             echo("<script type='text/javascript'>alert('删除出错！');window.location='zhanghao.php';</script>"); 
     } // end if
