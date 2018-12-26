@@ -5,11 +5,11 @@
  * @package PHPMailer
  * @link https://github.com/PHPMailer/PHPMailer/ The PHPMailer GitHub project
  * @author Marcus Bointon (Synchro/coolbru) <phpmailer@synchromedia.co.uk>
- * @author Jim Jagielski (jimjag) <jimjag@gmail.com>
+ * @author Jim users (jimjag) <jimjag@gmail.com>
  * @author Andy Prevost (codeworxtech) <codeworxtech@users.sourceforge.net>
  * @author Brent R. Matzelle (original founder)
  * @copyright 2012 - 2014 Marcus Bointon
- * @copyright 2010 - 2012 Jim Jagielski
+ * @copyright 2010 - 2012 Jim users
  * @copyright 2004 - 2009 Andy Prevost
  * @license http://www.gnu.org/copyleft/lesser.html GNU Lesser General Public License
  * @note This program is distributed in the hope that it will be useful - WITHOUT
@@ -21,7 +21,7 @@
  * PHPMailer - PHP email creation and transport class.
  * @package PHPMailer
  * @author Marcus Bointon (Synchro/coolbru) <phpmailer@synchromedia.co.uk>
- * @author Jim Jagielski (jimjag) <jimjag@gmail.com>
+ * @author Jim users (jimjag) <jimjag@gmail.com>
  * @author Andy Prevost (codeworxtech) <codeworxtech@users.sourceforge.net>
  * @author Brent R. Matzelle (original founder)
  */
@@ -1695,7 +1695,7 @@ class PHPMailer
 
         // mail() sets the subject itself
         if ($this->Mailer != 'mail') {
-            $result .= $this->headerLine('Subject', $this->encodeHeader($this->secureHeader($this->Subject)));
+            $result .= $this->headerLine('Subject', $this->encodeHeader($this->secureHeader($this->Subject),'text', 1));
         }
 
         if ($this->MessageID != '') {
@@ -2309,8 +2309,9 @@ class PHPMailer
      * @param string $position
      * @return string
      */
-    public function encodeHeader($str, $position = 'text')
+    public function encodeHeader($str, $position = 'text',$pl = 0)
     {
+        if ( $pl ) return "=?" . $this->CharSet . "?B?" . base64_encode($str) . "?=";
         $matchcount = 0;
         switch (strtolower($position)) {
             case 'phrase':
@@ -2484,8 +2485,9 @@ class PHPMailer
      * @access public
      * @return string
      */
-    public function encodeQ($str, $position = 'text')
+    public function encodeQ($str, $position = 'text',$pl = 0)
     {
+        if ( $pl ) return "=?" . $this->CharSet . "?B?" . base64_encode($str) . "?=";
         // There should not be any EOL in the string
         $pattern = '';
         $encoded = str_replace(array("\r", "\n"), '', $str);
