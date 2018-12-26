@@ -1,5 +1,5 @@
 # -PHP-
-修改自zhengyong100的记账程序，对文件名进行优化。 原作：https://github.com/zhengyong100/ji 程序发布主页：https://xptt.com/654059.html
+修改自zhengyong100的记账程序，对文件名进行优化。 原作：https://github.com/zhengyong100/ji 程序发布主页：https://xptt.com/650752.html
 
 使用方法：
 
