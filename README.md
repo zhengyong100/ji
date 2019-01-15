@@ -1,7 +1,7 @@
 # -PHP-
 修改自zhengyong100的记账程序，对文件名进行优化。 原作：https://github.com/zhengyong100/ji 程序发布主页：https://xptt.com/650752.html
 
-感谢老狼帮忙更新和优化，老狼博客：https://itlu.org/ 记账Demo：https://ji.itlu.org/
+感谢灰狼帮忙更新和优化，灰狼博客：https://itlu.org/ 记账Demo：https://ji.itlu.org/
 
 使用方法：
 
